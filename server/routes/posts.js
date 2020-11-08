@@ -1,8 +1,9 @@
 // this file is exclusively to say what tp do on certain routes- the logic is found in the file conrollers/posts
 import express from 'express';
+
+import {getPosts,createPost} from '../controllers/posts.js' //we use braces for import as it is a named export and not a default export
 const router = express.Router();
 
-router.get('/', (req,res)=>{
-    res.send('THIS WORKS!')
-})
+router.get('/', getPosts)
+router.post('/', createPost)
 export default router; 
