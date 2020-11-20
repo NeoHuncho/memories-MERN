@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({limit:"30mb", extended: true}));
 app.use(cors());
 
 app.get('/', (req,res) =>{
-    res.send('Welctome to memories API')
+    res.send('Welcome to memories API')
 })
 app.use('/posts',postRoutes) //this is middleware- this means that every route comming from postRoutes(imported on top) will be accessed with localhost/posts
 const PORT = process.env.PORT || 5000;
