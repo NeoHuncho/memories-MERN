@@ -12,8 +12,10 @@ app.use(bodyParser.json({limit:"30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit:"30mb", extended: true}));
 app.use(cors());
 
+app.get('/', (req,res) =>{
+    res.send('Welctome to memories API')
+})
 app.use('/posts',postRoutes) //this is middleware- this means that every route comming from postRoutes(imported on top) will be accessed with localhost/posts
-//const CONNECTION_URL = "mongodb+srv://william:Azer0007@cluster0.c37g5.mongodb.net/<dbname>?retryWrites=true&w=majority"
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.CONNECTION_URL,{useNewUrlParser:true, useUnifiedTopology:true})//both use option are optional but avoid errors in console
